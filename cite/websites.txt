@@ -1,0 +1,10 @@
+Describe any online resources from which you borrowed/adapted code:
+
+Project Stage: P1
+URL: ????
+What: ChatGPT
+
+line 13 on sparrow.h
+lines 26 - 32 on sparrow.cpp
+
+...more entries...
