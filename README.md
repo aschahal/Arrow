@@ -24,13 +24,15 @@ For example, ./p3 2 3 should print 2.5. ./p3 2 null 3 would also print 2.5 since
 
 **Object Oriented Programming** (Part 4): The fourth stage involves refactoring previous code to use classes, focusing on encapsulation, inheritance, and polymorphism through an **IntColumn** class that manages operations previously handled by NullableInts. For example, if you run *./p4 4 null 2 0 -3*, the output should be:
 
-- IntColumn:
-  4
-  null
-  2
-  null
-  -3
-  Avg: 1
+```
+IntColumn:
+4
+null
+2
+null
+-3
+Avg: 1
+```
 
 There are two substages to Part 4:
 
@@ -38,6 +40,7 @@ There are two substages to Part 4:
 
 - **Table** (4b):  Stage 4b involves creating a Table class that acts as a collection of NamedIntColumn objects, supporting file I/O and shared pointers for efficient memory management and operations like adding and dividing columns. Suppose tbl1.txt describes two columns like this:
 
+```
 3
 2
 A
@@ -48,17 +51,24 @@ B
 10
 5
 15
+```
+
 We ought to be able to read it in and perform some computations to produce additional columns, like this:
 
+```cpp
 sparrow::Table t{"tbl1.txt"};
 t.AddCol(*t["A"] / *t["B"]);
 t.AddCol(*t["A"] / 10);
 cout << t;
+```
+
 The result would look like this:
 
+```
 A,B,A/B,A/10
 10,10,1,1
 20,5,4,2
 30,15,2,3
+```
 
 Project Arrow allows efficient handling of data columns and operations like addition, subtraction, and conditional operations without explicit loops or data serialization, mimicking the functionalities of the Apache Arrow project in a learning-focused environment.
